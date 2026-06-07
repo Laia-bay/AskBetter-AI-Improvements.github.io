@@ -8,22 +8,32 @@ export function ResolverScreen (params){
         <section id="resolver" class="content-section">
             <div style="display:flex; flex-direction:row; gap:20px; margin-top:2%">
                 <h3 style="color:limegreen"><em><b>Resolución de ejercicios con IA Generativa</b></em></h3>
-                <button id="audioResolver" class="btn btn-outline-light btn-sm" style="height:30px; width:30px">
+                <button id="ARIntro" class="btn btn-outline-light btn-sm" style="height:30px; width:30px">
                     <i class="bi bi-volume-up"></i>
                 </button>
             </div>
             <div>
-                <p>
-                La IA Generativa tiene un gran potencial para explicar los pasos de los ejercicios de diferentes maneras para el/la estudiante, 
-                pero los prompts utilizados afectan al resultado.
-                </p>
-                <p>
-                Ahora miraremos las estrategias que son usadas habitualmente, y alternativas que pueden ser útiles.
-                </p>
+                <div class="resolver-intro" style="display:none">
+                    <p>
+                    La IA Generativa tiene un gran potencial para explicar los pasos de los ejercicios de diferentes maneras para el/la estudiante, 
+                    pero los prompts utilizados afectan al resultado.
+                    </p>
+                    <p>
+                    Ahora miraremos las estrategias que son usadas habitualmente, y alternativas que pueden ser útiles.
+                    </p>
+                </div>
+                <button id="resolverIntroBtn" class="btn btn-outline-light btn-sm" style="height:30px; width:60px">
+                    Mostrar
+                </button>
             </div>
 
-            <h3 style="color:limegreen"><em><b>Estrategia habitual</b></em></h3>
-            <div>
+            <div style="display:flex; flex-direction:row; gap:20px; margin-top:2%">
+                <h3 style="color:limegreen"><em><b>Estrategia habitual</b></em></h3>
+                <button id="AREstHab" class="btn btn-outline-light btn-sm" style="height:30px; width:30px">
+                    <i class="bi bi-volume-up"></i>
+                </button>
+            </div>
+            <div class="resolver-esthab" style="display:none">
             <p>Para ahorrar tiempo, normalmente le decimos a la IA que resuelva un ejercicio, y automáticamente lo hace por pasos.<br>
             Esta división por pasos es útil, pero no es personalizada para todo el mundo y para todo tipo de ejercicios. 
             A veces se necesita un plan más detallado, mientras que otras veces sólo quieres una explicación general.
@@ -34,10 +44,18 @@ export function ResolverScreen (params){
             qué y cómo aprende.
             </p>
             </div>
+            <button id="resolverEstHabBtn" class="btn btn-outline-light btn-sm" style="height:30px; width:60px">
+                Mostrar
+            </button>
+            </div>
 
-            
-            <h3 style="color:limegreen"><em><b>Estrategia alternativa</b></em></h3>
-            <div>
+            <div style="display:flex; flex-direction:row; gap:20px; margin-top:2%">
+                <h3 style="color:limegreen"><em><b>Estrategia alternativa</b></em></h3>
+                <button id="AREstAlt" class="btn btn-outline-light btn-sm" style="height:30px; width:30px">
+                    <i class="bi bi-volume-up"></i>
+                </button>
+            </div>
+            <div class="resolver-estalt" style="display:none">
                 <p>Para sacarle el mayor partido a la IA generativa a la hora de resolver ejercicios hay que crear prompts más específicos 
                 y que no ofrezcan la solución completa, así aunque el estudiante ha de pensar más, también aprende más rápido.</p>
                 <p>hay ejercicios que se pueden resolver de diferentes maneras, sobretodo según el nivel en el que estás.
@@ -59,7 +77,18 @@ export function ResolverScreen (params){
                 de la misma manera pero con números diferentes, o incluso puedes pedir que te haga preguntas teóricas sobre cómo se resuelve.
                 </p>
             </div>
-            <h3 style="color:limegreen"><em><b>Comparativa</b></em></h3>
+            <button id="resolverEstAltBtn" class="btn btn-outline-light btn-sm" style="height:30px; width:60px">
+                Mostrar
+            </button>
+
+
+            <div style="display:flex; flex-direction:row; gap:20px; margin-top:2%">
+                <h3 style="color:limegreen"><em><b>Comparativa</b></em></h3>
+                <button id="ARComp" class="btn btn-outline-light btn-sm" style="height:30px; width:30px">
+                    <i class="bi bi-volume-up"></i>
+                </button>
+            </div>
+            <div class="resolver-comp">
             <p>Pongamos como ejemplo que necesitas resolver este ejercicio de Señales y Sistemas sobre <em>dibujar un gráfico de magnitud</em>
             </p>
 
@@ -176,6 +205,7 @@ export function ResolverScreen (params){
                         <p>Si quieres, en el siguiente paso podemos comprobar juntos si has encontrado bien las frecuencias antes de dibujar.</p>
                     </div>
                 </div>
+            </div>
             </div>
         </section>
 

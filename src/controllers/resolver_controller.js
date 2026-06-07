@@ -13,6 +13,17 @@ export function ResolverController (params){
     const resolver_section = container.querySelector('#resolver')
     const pruebatu_section = container.querySelector('#pruebatu');
 
+    //getting all the paragraphs separately
+    const intro = container.querySelector('.resolver-intro');
+    const hab = container.querySelector('.resolver-esthab');
+    const alt = container.querySelector('.resolver-estalt');
+    const comp = container.querySelector('.resolver-comp');
+
+    //getting the show buttons of every paragraph
+    const intro_btn = container.querySelector('#resolverIntroBtn');
+    const hab_btn = container.querySelector('#resolverEstHabBtn');
+    const alt_btn = container.querySelector('#resolverEstAltBtn');
+
     //referencing the navigation section and its buttons
     const atras_btn = container.querySelector('#atrasBtn');
     const prueba_btn = container.querySelector('#pruebaBtn');
@@ -21,9 +32,21 @@ export function ResolverController (params){
     //knowing if pruebalo tu section is visible
     let isVisible = null;
 
-    //controlling the audio
-    const audio_resolver = container.querySelector('#audioResolver');
-    let utterance = null;
+
+        //controlling ALL the audios
+        const a_intro = container.querySelector('#ARIntro');
+        const a_hab = container.querySelector('#AREstHab');
+        const a_alt = container.querySelector('#AREstAlt');
+        const a_comp = container.querySelector('#ARComp')
+
+        const utterances = {
+            intro: null,
+            hab: null,
+            alt: null,
+            comp: null
+        };
+
+        let current_key = null;
 
     //referencing the elements from pruebalo tu section/page
     const pistas = container.querySelector('#pistasPrompt');
@@ -33,30 +56,58 @@ export function ResolverController (params){
 
     //FUNCTIONS
         //leer: reads the content of the page
-    function leerEvent() {
+    function leerEvent(paragraph, key) {
 
-        if (utterance){
+        let utterance = utterances[key];
+        
+        //If this paragraph audio exists and is the current one (whether it is playing or not), toggle pause/resume
+        if (current_key == key && utterance){
+
             if (speechSynthesis.speaking && !speechSynthesis.paused) {
                 speechSynthesis.pause();
+                console.log("pausado!");
                 return;
+                
             }
         
             if (speechSynthesis.paused) {
                 speechSynthesis.resume();
+                console.log("reanudado!");
                 return;
             }
         }
+        //If there is a paragraph that exists but it is not this one, cancel it.
+        if (current_key && current_key != key){
+            speechSynthesis.cancel();
 
-        if(!utterance){
-            const texto = resolver_section.innerText;
-            
-            utterance = new SpeechSynthesisUtterance(texto);
-            
-            utterance.lang = "es-ES";
-            utterance.rate = 1;
-            utterance.onend = () => utterance = null;
-            speechSynthesis.speak(utterance);
+            utterances[current_key] = null;
+            current_key = null;
+
         }
+
+        //create a new utterance with the desired paragraph
+        const texto = paragraph.innerText;
+
+        utterance = new SpeechSynthesisUtterance(texto);
+
+        utterance.lang = "es-ES";
+        utterance.getVoices()[0];
+        utterance.rate = 1;
+
+        utterance.onend = () => {
+            utterances[key] = null;
+
+            if (current_key == key) current_key = null
+
+            console.log("terminado!");
+        };
+
+        utterances[key] = utterance;
+        current_key = key;
+
+        speechSynthesis.speak(utterance);
+
+        console.log("creado!");
     }
 
         //pruebalo tu: give the user some tips on how to apply it to their own code
@@ -68,7 +119,10 @@ export function ResolverController (params){
         atras_btn.style.display="";
 
         //cancelling audio
-        utterance = null;
+        utt_intro = null;
+        utt_hab = null;
+        utt_alt = null;
+        utt_comp = null;
         speechSynthesis.cancel();
         
         return;
@@ -78,7 +132,18 @@ export function ResolverController (params){
     //EVENT LISTENERS
 
         //reading content
-    audio_resolver.onclick = () => {leerEvent()};
+        /*
+    a_intro.onclick = () => {leerEvent(intro,utt_intro)};
+    a_hab.onclick = () => {leerEvent(hab,utt_hab)};
+    a_alt.onclick = () => {leerEvent(alt,utt_alt)};
+    a_comp.onclick = () => {leerEvent(comp,utt_comp)};
+    */
+
+    a_intro.onclick = () => leerEvent(intro, "intro");
+    a_hab.onclick = () => leerEvent(hab, "hab");
+    a_alt.onclick = () => leerEvent(alt, "alt");
+    a_comp.onclick = () => leerEvent(comp, "comp");
+
 
         //going to pruebalo tu screen
     prueba_btn.addEventListener('click', ()=> {pruebaloTu()});
