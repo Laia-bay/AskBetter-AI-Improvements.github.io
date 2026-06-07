@@ -9,7 +9,7 @@ export function ConceptoScreen (params){
     
         <div id="explaining">
             <button id="teoriaBtn" class="btn option concepto">No entiendo la teoría</button>
-            <button id="repasarBtn" class="btn option concepto">Quiero repasar la teoría</button>
+            <button id="repasarBtn" class="btn option concepto">Quiero repasar lo aprendido</button>
         </div>
 
         <!--depending on the option chosen the content will be different-->
@@ -187,7 +187,7 @@ export function ConceptoScreen (params){
 
         <section id="repasar" class="content-section" style="display:none">
             <div style="display:flex; flex-direction:row; gap:20px;">
-                <h3 style="color:violet"><em><b>Quiero repasar la teoría</b></em></h3>
+                <h3 style="color:violet"><em><b>Quiero repasar lo aprendido</b></em></h3>
                 <button id="audioRepasar" class="btn btn-outline-light btn-sm" style="height:30px; width:30px">
                     <i class="bi bi-volume-up"></i>
                 </button>
