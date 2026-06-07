@@ -1,0 +1,529 @@
+/*STYLES OF THIS WEBSITE ARE DONE WITH CSS AND BOOTSTRAP*/
+
+/*GENERAL STRUCTURE*/
+#layout {
+  font-family: 'Roboto';
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap:10px;
+  margin:40px;
+  font-size:17px;
+}
+
+#globalHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+}
+
+.titles {
+  justify-self: center;
+  font-size: 40px;
+}
+
+.subtitles {
+  justify-self: center;
+  font-size: 25px;
+}
+
+
+/* MAIN SCREEN*/
+#welcome {
+  margin-top: 5%;
+}
+
+.options {
+  margin-top: 8%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+}
+  /*color of buttons*/
+
+.btn.option{
+  border: 2px solid;
+  font-size:17px;
+  width: 260px;
+  padding: 12px 0px;
+}
+.btn.option:hover{
+  font-weight: bold;
+}
+
+.btn.option.concepto {
+  border-color:violet;
+}
+
+.btn.option.concepto:hover {
+  background-color:violet;
+}
+
+.btn.option.codigo {
+    border-color:dodgerblue;
+}
+.btn.option.codigo:hover {
+  background-color:dodgerblue;
+}
+
+.btn.option.resolver {
+    border-color:limegreen;
+}
+.btn.option.resolver:hover {
+  background-color:limegreen;
+}
+
+.btn.option.comprobar {
+    border-color:darkorange;
+}
+.btn.option.comprobar:hover {
+  background-color:darkorange;
+}
+
+
+/*ENTENDER UN CONCEPTO SCREEN*/
+#explaining{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+}
+
+
+/*TRABAJAR CON CÓDIGO SCREEN*/
+#coding{
+  margin-top: 5%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 20px;
+}
+
+/*GENERAL STYLE FOR ALL SCREENS*/
+
+.content-section{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/*justifying text*/
+p {
+  margin-left: 1%;
+  max-width: 94%;
+  text-align: justify;
+  font-size:18px;
+}
+
+/*section where we compare the 2 strategies*/
+.comparison{
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  margin-left: 200px;
+}
+/*section where code is added - inside is <pre><code class="languange-python">*/
+.code{
+  margin-left: 10px;
+}
+
+/*style of section with code*/
+#app pre[class*="language-"] {
+  background: #1e1e1e;
+  max-height: 530px;
+  overflow-y:auto;
+  overflow-x:hidden;
+  max-width: 670px;
+  min-width:500px;
+  align-self:center;
+  padding: 10px;
+  padding-left: 20px;
+  font-size: 14px;
+}
+/*couple of details of code section*/
+#app .copy-to-clipboard {
+  font-size:0;
+}
+
+#app .copy-to-clipboard-button::after {
+  font-size:0;
+}
+
+/*divison where habitual and mejorado prompts are*/
+.promptsDiv{
+  margin-top: 8px;
+  display:flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap:30px;
+}
+
+/*division where results of the habitual and mejorado prompts are shown*/
+.resultsDiv {
+  margin-top:30px;
+  display: flex;
+  flex-direction: row;
+  margin-left: 200px;
+  justify-content: space-between;
+  max-width: 75%;
+}
+
+/*actual text inside the division - it is also used for the results.*/
+.promptText{
+  display:flex;
+  flex-direction: column;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #1e1e1e;
+  margin-left: 10px;
+  padding: 10px;
+  width: 500px;
+  gap:20px;
+  max-height: 390px;
+  overflow-y:auto;
+}
+/*specific configuration for trabajar con código-la IA me lo hace option: example exercise to be done*/
+.promptText.exercise{
+  width:650px;
+  max-height:fit-content;
+  padding: 15px;
+}
+
+/*styling all elements inside prompt text to match the rest of the webpage*/
+.promptText p {
+  font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  margin: 0;
+  max-width:98%;
+}
+.promptText h5 {
+  font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
+}
+.promptText ol {
+  font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  margin: 0;
+}
+.promptText li {
+  font-family: 'Inter', 'Roboto', 'Segoe UI', sans-serif;
+  font-size: 15px;
+  margin: 0;
+}
+
+/*section where atrás and pruebalo tu button are shown*/
+.footerSec{
+  margin-top: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+
+}
+/*styling the pruebalo tu button*/
+.btn.prueba {
+  width: 110px;
+  padding: 8px 0px;
+  color:white;
+}
+
+.btn.prueba:hover{
+    font-weight: bold;
+}
+/*changing color depending on screen*/
+.btn.prueba.codigo{
+  background-color: dodgerblue;
+}
+
+.btn.prueba.codigo:hover {
+  background-color: rgb(0, 80, 225);
+}
+
+.btn.prueba.concepto{
+  background-color: violet;
+}
+
+.btn.prueba.concepto:hover {
+  background-color: rgb(120, 0, 160);
+}
+
+.btn.prueba.resolver{
+  background-color: limegreen;
+}
+
+.btn.prueba.resolver:hover {
+  background-color: rgb(0, 180, 0);
+}
+
+.btn.prueba.comprobar{
+  background-color: darkorange;
+}
+
+.btn.prueba.comprobar:hover {
+  font-weight: bold;
+  background-color: rgb(230, 119, 0);
+}
+
+
+/*whole division of title, button, and optional pistas*/
+.pistaDiv{
+  display:flex;
+  flex-direction:row;
+  gap:10px;
+}
+
+/*division where the pistas are shown*/
+#pistasPrompt {
+  display: flex;
+  flex-direction: row;
+  width: 1200px;
+  align-self: center;
+  padding:20px 20px;
+  justify-content: space-between;
+  gap:100px;
+}
+
+/*specific pista section that is too long*/
+#pistaLong {
+  max-width:40% !important;
+}
+
+
+/*showing pistas button*/
+.btn.pista{
+  width: 70px;
+  height: 30px;
+  color:white;
+}
+/*styling color depending on screen*/
+.btn.pista.codigo{
+  border: 2px solid dodgerblue;
+}
+.btn.pista.codigo:hover{
+  background-color: dodgerblue;
+}
+
+.btn.pista.concepto{
+  border: 2px solid violet;
+}
+.btn.pista.concepto:hover{
+  background-color: violet;
+}
+
+.btn.pista.resolver{
+  border: 2px solid limegreen;
+}
+.btn.pista.resolver:hover{
+  background-color: limegreen;
+}
+
+.btn.pista.comprobar{
+  border: 2px solid darkorange;
+}
+.btn.pista.comprobar:hover{
+  background-color: darkorange;
+}
+
+/*changing button when clicked to "esconde" with a light grey (common for all screens)*/
+.btn.pista.hide{
+  color:white;
+  border: 2px solid white;
+}
+
+.btn.pista.hide:hover{
+  background-color: gray;
+}
+
+/*Title of reflection section*/
+.titleReflection{
+  margin-left: 30px;
+}
+/*reflection division*/
+.reflection{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-left: 60px;
+}
+
+/*changing color of checked boxes depending on screen*/
+/*original is already blue so there is no need to change in codigo*/
+.form-check-input.concepto:checked {
+  background-color: violet;
+  border-color: violet;
+}
+
+.form-check-input.resolver:checked {
+  background-color: limegreen;
+  border-color: limegreen;
+}
+.form-check-input.comprobar:checked {
+  background-color: darkorange;
+  border-color: darkorange;
+}
+
+/*HELP-INFO SCREEN*/
+#helpDiv{
+  font-size: 18px;
+  text-align: justify;
+}
+
+.link:hover{
+  cursor:pointer;
+  font-weight: bolder;
+}
+
+#helpDiv ul{
+  padding-left: 20px;
+}
+#helpDiv p{
+   margin-left:0;
+}
+
+#helpDiv b{
+  color:rgb(255, 186, 171);  
+}
+
+
+
+
+/*RESPONSIVE FOR MOBILE PHONES TOO*/
+@media (max-width: 576px){
+  #layout {
+    font-family: 'Roboto';
+    min-height: 98%;
+    display: flex;
+    flex-direction: column;
+    gap:5px;
+    margin-left:3%;
+    font-size:17px;
+    max-width:96%;
+  }
+
+  #globalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .titles {
+    text-align:center;
+  }
+
+  .subtitles {
+    text-align:center;
+  }
+
+  #coding{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 25px;
+  }
+  
+  .comparison{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 1% !important;
+    max-width: 98% !important;
+  }
+
+  .code{
+    margin-top:0;
+    margin-left: 1%;
+    min-width: none;
+    max-width: 98% !important;
+  }
+
+  #app pre[class*="language-"] {
+    margin-top:0;
+    background: #1e1e1e;
+    overflow-y:auto;
+    font-size: 14px;  
+    max-height: 300px !important;
+    min-width: 0;
+    width: 100% !important;
+    max-width:100% !important;
+  }
+
+  .promptsDiv{
+    margin-top: 10px;
+    display:flex;
+    flex-direction: column;
+    gap:5px;
+    align-items: stretch;
+    width: 98% !important;
+  }
+
+  .promptText{
+    display:flex;
+    flex-direction: column;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #1e1e1e;
+    margin-left: 1% !important;
+    padding: 5px;
+    min-width: none;
+    width: 100% !important;
+    gap:10px;
+    max-height: 300px;
+    overflow-y:auto;
+  }
+
+  .promptText.example{
+    margin-top: 0;
+    margin-left: 1% !important;
+    max-width: 100% !important;
+  }
+
+  .resultsDiv {
+    margin-top:10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-left: 1% !important;
+    min-width: 100% !important;
+  }
+
+  #pistasPrompt {
+    display: flex;
+    flex-direction: column;
+    max-width: 98% !important;
+    margin: 1% !important;
+    gap:10px !important;
+    align-self: center;
+    height:350px;
+    overflow-y: auto;
+    padding:10px 10px;
+  }
+
+  #pistaLong {
+    max-width:96% !important;
+  }
+
+  .pistaDiv{
+    display:flex;
+    flex-direction:row;
+    gap:10px;
+    width: 96% !important;
+  }
+
+  .titleReflection{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-left: 4%;
+  }
+
+  .reflection{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+    margin-left: 6%;
+  }
+
+}
