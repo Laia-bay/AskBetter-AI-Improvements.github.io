@@ -110,6 +110,20 @@ export function ResolverController (params){
         console.log("creado!");
     }
 
+        //muestraTexto: shows the paragraph when clicking the button
+    function muestraTexto(paragraph, btn){
+        if(btn.className == "btn mostrar btn-outline-light btn-sm"){
+            paragraph.style.display="";
+            btn.innerText = "esconde";
+            btn.classList.add("hide");
+        }
+        else{
+            paragraph.style.display="none";
+            btn.innerHTML = `Mostrar`;
+            btn.classList.remove("hide");
+        }
+    }
+
         //pruebalo tu: give the user some tips on how to apply it to their own code
     function pruebaloTu(){
         isVisible = true;
@@ -132,18 +146,15 @@ export function ResolverController (params){
     //EVENT LISTENERS
 
         //reading content
-        /*
-    a_intro.onclick = () => {leerEvent(intro,utt_intro)};
-    a_hab.onclick = () => {leerEvent(hab,utt_hab)};
-    a_alt.onclick = () => {leerEvent(alt,utt_alt)};
-    a_comp.onclick = () => {leerEvent(comp,utt_comp)};
-    */
-
     a_intro.onclick = () => leerEvent(intro, "intro");
     a_hab.onclick = () => leerEvent(hab, "hab");
     a_alt.onclick = () => leerEvent(alt, "alt");
     a_comp.onclick = () => leerEvent(comp, "comp");
 
+        // showing content
+    intro_btn.onclick = () =>{muestraTexto(intro,intro_btn)};
+    hab_btn.onclick = () =>{muestraTexto(hab,hab_btn)};
+    alt_btn.onclick = () =>{muestraTexto(alt,alt_btn)};
 
         //going to pruebalo tu screen
     prueba_btn.addEventListener('click', ()=> {pruebaloTu()});

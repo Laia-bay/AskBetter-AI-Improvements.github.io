@@ -22,7 +22,7 @@ export function ResolverScreen (params){
                     Ahora miraremos las estrategias que son usadas habitualmente, y alternativas que pueden ser útiles.
                     </p>
                 </div>
-                <button id="resolverIntroBtn" class="btn btn-outline-light btn-sm" style="height:30px; width:60px">
+                <button id="resolverIntroBtn" class="btn mostrar btn-outline-light btn-sm" style="height:30px; width:60px">
                     Mostrar
                 </button>
             </div>
@@ -44,7 +44,7 @@ export function ResolverScreen (params){
             qué y cómo aprende.
             </p>
             </div>
-            <button id="resolverEstHabBtn" class="btn btn-outline-light btn-sm" style="height:30px; width:60px">
+            <button id="resolverEstHabBtn" class="btn mostrar btn-outline-light btn-sm" style="height:30px; width:60px">
                 Mostrar
             </button>
             </div>
@@ -77,7 +77,7 @@ export function ResolverScreen (params){
                 de la misma manera pero con números diferentes, o incluso puedes pedir que te haga preguntas teóricas sobre cómo se resuelve.
                 </p>
             </div>
-            <button id="resolverEstAltBtn" class="btn btn-outline-light btn-sm" style="height:30px; width:60px">
+            <button id="resolverEstAltBtn" class="btn mostrar btn-outline-light btn-sm" style="height:30px; width:60px">
                 Mostrar
             </button>
 
